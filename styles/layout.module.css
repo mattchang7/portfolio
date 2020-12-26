@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: grey;
+}
+
+.navLinks {
+  display: flex;
+  width: 18em;
+  justify-content: space-around;
+}
