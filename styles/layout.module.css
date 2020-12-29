@@ -8,11 +8,36 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: grey;
+  background-color: black;
 }
 
-.navLinks {
+.navLinksBox {
   display: flex;
   width: 18em;
   justify-content: space-around;
+}
+
+.navLinks {
+  color: #AA98B6;
+  text-decoration: none;
+  font-weight: bold
+}
+
+.navLinks:hover {
+  font-weight: normal;
+}
+
+.navLinks:before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin: 5px 0px 5px 15px;
 }

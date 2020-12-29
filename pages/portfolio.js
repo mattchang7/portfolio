@@ -1,11 +1,11 @@
-import Link from 'next/link'
+/* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedProjectsData } from '../lib/projects'
 
 export async function getStaticProps() {
-  const allProjectsData = getSortedProjectsData()
+  const allProjectsData = await getSortedProjectsData()
   return {
     props: {
       allProjectsData
@@ -26,11 +26,11 @@ export default function Portfolio({ allProjectsData }) {
                 <ul className={utilStyles.list}>
                 {allProjectsData.map(({ id, date, title, role }) => (
                     <li className={utilStyles.listItem} key={id}>
-                    {title}
-                    <br />
-                    {date}
-                    <br />
-                    {role}
+                        {title}
+                        <br />
+                        {date}
+                        <br />
+                        {role}
                     </li>
                 ))}
                 </ul>

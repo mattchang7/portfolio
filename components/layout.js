@@ -6,45 +6,23 @@ export default function Layout({ children, home }) {
         <div className={styles.container}>
             <div className={styles.navBar}>
                 <Link href='/'>
-                     <img src='images/logo-svg.svg'/>
+                     <a className={styles.logo}><img src='images/logo-svg.svg'/></a>
                 </Link>
-                <div className={styles.navLinks}>
+                <div className={styles.navLinksBox}>
                     <Link href='/portfolio'>
-                        <a>Portfolio</a>
+                        <a className={styles.navLinks} title='Portfolio'>Portfolio</a>
                     </Link>
                     <Link href='/experience'>
-                        <a>Experience</a>
+                        <a className={styles.navLinks} title='Experience'>Experience</a>
                     </Link>
                     <Link href='/contact'>
-                        <a>Contact</a>
+                        <a className={styles.navLinks} title='Contact'>Contact</a>
                     </Link>
                 </div>
             </div>
-            {children}
+            <div className={styles.body}>
+                {children}
+            </div>
         </div>
     )
 }
-
-// import styles from '../styles/layout.module.css'
-
-// export default function Layout({ children }) {
-//     return (
-//         <div className={styles.container}>
-//             <div className='nav-bar'>
-//                 <Link href='/'>
-//                     <img href=''
-//                 </Link>
-//                 <Link href='/portfolio'>
-//                     <a>Portfolio</a>
-//                 </Link>
-//                 <Link href='/experience'>
-//                     <a>Experience</a>
-//                 </Link>
-//                 <Link href='/contact'>
-//                     <a>Contact</a>
-//                 </Link>
-//             </div>
-//             {children}
-//         </div>
-//     )
-// }
