@@ -24,13 +24,15 @@ export default function Portfolio({ allProjectsData }) {
             </div>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <ul className={utilStyles.list}>
-                {allProjectsData.map(({ id, date, title, role }) => (
+                {allProjectsData.map(({ id, date, title, role, path, contentHtml }) => (
                     <li className={utilStyles.listItem} key={id}>
-                        {title}
+                        <img src={path}/>
                         <br />
                         {date}
                         <br />
                         {role}
+                        <br />
+                        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
                     </li>
                 ))}
                 </ul>
