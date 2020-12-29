@@ -2,7 +2,8 @@
 title: 'Stackathon'
 date: '2020-09-30'
 role: 'Developer'
-path: 'images/Stackathon-title.jpg'
+image: 'images/Stackathon-title.jpg'
+mobileImage: 'images/Stackathon-title-mobile.jpg'
 ---
 
 An app using Google Maps API to map between locations and create an Indiana Jones style animation

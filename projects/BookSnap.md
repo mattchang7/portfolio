@@ -2,7 +2,8 @@
 title: BookSnap
 date: '2020-10-30'
 role: Developer
-path: 'images/BookSnap-title.jpg'
+image: 'images/BookSnap-title.jpg'
+mobileImage: 'images/BookSnap-title-mobile.jpg'
 ---
 
 A mobile app to consolidate your digital and physical libraries with machine learning photo scanning

@@ -24,9 +24,13 @@ export default function Portfolio({ allProjectsData }) {
             </div>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <ul className={utilStyles.list}>
-                {allProjectsData.map(({ id, date, title, role, path, contentHtml }) => (
+                {allProjectsData.map(({ id, date, title, role, image, mobileImage, contentHtml }) => (
                     <li className={utilStyles.listItem} key={id}>
-                        <img src={path}/>
+                        <img 
+                            srcSet={`${mobileImage} 1000w, ${image} 2000w`}
+                            sizes="(max-width: 1100px) 1000px, 2000px"
+                            src={image}
+                        />
                         <br />
                         {date}
                         <br />
