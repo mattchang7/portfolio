@@ -10,10 +10,13 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
+    "primeicons": "^4.1.0",
     "react": "16.13.1",
     "react-chrono": "^1.8.3",
     "react-dom": "16.13.1",
+    "react-slick": "^0.27.13",
     "remark": "^13.0.0",
-    "remark-html": "^13.0.1"
+    "remark-html": "^13.0.1",
+    "slick-carousel": "^1.8.1"
   }
 }
