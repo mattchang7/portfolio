@@ -25,14 +25,21 @@ export default function Portfolio({ allProjectsData }) {
                 </Head>
                 <h1>Portfolio</h1>
             </div>
-            <div className="container">
-            <Slider>
-                {
-                    allProjectsData.map(project => (
-                        <img src={project.image} />
-                    ))
-                }
-            </Slider>
+            <div className={utilStyles.carousel}>
+            {
+                allProjectsData.map(project => (
+                    <Slider key={project.id} fade={true}>
+                        <div>
+                            <img src={project.image} />
+                        </div>
+                        <div className={utilStyles.projectContent}>
+                            <h3>{project.role}</h3>
+                            <h4>{project.date}</h4>
+                            <div dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
+                        </div>
+                    </Slider>
+                ))
+            }
             </div>
             {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <ul className={utilStyles.list}>
