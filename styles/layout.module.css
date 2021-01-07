@@ -19,23 +19,14 @@
 }
 
 .navLinks {
+  flex-direction: row;
+}
+
+.navLinkLetters {
   color: #AA98B6;
   text-decoration: none;
-  font-weight: 300;
-}
-
-.navLinks:hover {
-  color: rgb(255, 255, 203);
   font-weight: 500;
-}
-
-.navLinks:before {
-  display: block;
-  content: attr(title);
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
+  display: inline;
 }
 
 .logo {

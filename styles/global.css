@@ -8,6 +8,7 @@ body {
   font-size: 18px;
   color: white;
   background-color: rgb(26, 26, 26);
+  justify-content: center;
 }
 
 * {

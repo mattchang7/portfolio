@@ -1,7 +1,12 @@
 .profile {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 30vw;
+}
+
+.space {
+    height: 35vh;
+    display: block;
 }
 
 .heading2Xl {
@@ -72,4 +77,14 @@
     justify-content: center;
     align-items: center;
     background-color: grey;
+}
+
+.bigText {
+    display: inline;
+    font-size: 6vw;
+    color: #aa98b6;
+}
+
+.homePage {
+    padding: 25vh 10vw 0 10vw;
 }

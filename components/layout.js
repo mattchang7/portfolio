@@ -3,6 +3,10 @@ import styles from '../styles/layout.module.css'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
+const portfolioText = 'Portfolio'.split('')
+const experienceText = 'Experience'.split('')
+const contactText = 'Contact'.split('')
+
 export default function Layout({ children }) {
   return (
         <div className={styles.container}>
@@ -14,42 +18,74 @@ export default function Layout({ children }) {
                         animate={{ x: 0 }}
                         transition={{ duration: 1, delay: 0.5, type: 'spring', stiffness: 120 }}
                     >
-                        <img src='images/logo-svg.svg'/>
+                        <motion.div whileHover={{ scale: 1.1 }} >
+                            <img src='images/logo-svg.svg'/>
+                        </motion.div>
                     </motion.a>
                 </Link>
                 <div className={styles.navLinksBox}>
                     <Link href='/portfolio'>
-                        <motion.a 
-                            className={styles.navLinks} 
-                            title='Portfolio'
+                        <motion.div 
+                            className={styles.navLinks}
                             initial={{ x: '20vw' }}
                             animate={{ x: 0 }}
                             transition={{ duration: 1, type: 'spring', stiffness: 70 }}
+                            whileHover={{ scale: 1.1 }}
                         >
-                            Portfolio
-                        </motion.a>
+                        {
+                            portfolioText.map((letter, index) => (
+                                <motion.a 
+                                    className={styles.navLinkLetters}
+                                    key={index}
+                                    whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }}
+                                >
+                                    {letter}
+                                </motion.a>
+                            ))
+                        }
+                        </motion.div>
                     </Link>
                     <Link href='/experience'>
-                        <motion.a 
-                            className={styles.navLinks} 
-                            title='Experience'
+                    <motion.div 
+                            className={styles.navLinks}
                             initial={{ x: '20vw' }}
                             animate={{ x: 0 }}
-                            transition={{ duration: 1, delay: 0.25, type: 'spring', stiffness: 70 }}
+                            transition={{ duration: 1, type: 'spring', stiffness: 70 }}
+                            whileHover={{ scale: 1.1 }}
                         >
-                            Experience
-                        </motion.a>
+                        {
+                            experienceText.map((letter, index) => (
+                                <motion.a 
+                                    className={styles.navLinkLetters}
+                                    key={index}
+                                    whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }}
+                                >
+                                    {letter}
+                                </motion.a>
+                            ))
+                        }
+                        </motion.div>
                     </Link>
                     <Link href='/contact'>
-                        <motion.a 
-                            className={styles.navLinks} 
-                            title='Contact'
+                    <motion.div 
+                            className={styles.navLinks}
                             initial={{ x: '20vw' }}
                             animate={{ x: 0 }}
-                            transition={{ duration: 1, delay: 0.5, type: 'spring', stiffness: 70 }}
+                            transition={{ duration: 1, type: 'spring', stiffness: 70 }}
+                            whileHover={{ scale: 1.1 }}
                         >
-                            Contact
-                        </motion.a>
+                        {
+                            contactText.map((letter, index) => (
+                                <motion.a 
+                                    className={styles.navLinkLetters}
+                                    key={index}
+                                    whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }}
+                                >
+                                    {letter}
+                                </motion.a>
+                            ))
+                        }
+                        </motion.div>
                     </Link>
                 </div>
             </motion.div>

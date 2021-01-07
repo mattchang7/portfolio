@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
@@ -8,34 +9,62 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Matt Chang</title>
-        <link rel='icon' href='/images/logo-icon.ico'/>
+        <link rel='icon' href='/images/logo-icon.ico' />
       </Head>
       <motion.section 
-        // initial={{ x: '10vw', y: '60vw', opacity: 0 }}
-        // animate={{ color: '#aa98b6', fontSize: '5vw', opacity: 1, y: 0 }}
-        // transition={{ duration: 1.5 }}
+        className={utilStyles.homePage}
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
       >
-        <motion.img 
-          src='images/profile-bw.jpg' 
-          className={utilStyles.profile} 
-          animate={{ y: '5vw' }} 
-          transition={{ delay: 0.5 }}
-        />
-        <motion.h1 
-          initial={{ x: '10vw', y: '20vw', fontSize: '6vw', opacity: 0 }}
-          animate={{ y: 0, opacity: 1, fontSize: '6vw', color: '#aa98b6' }}
-          transition={{ duration: 3.5, type: 'spring', stiffness: 80, delay: 0.5  }}
+        <motion.div
+          variants={lineOneVariants}
+          >
+          {
+            lineOne.map((letter, index) => (
+              <motion.h1 key={index} className={utilStyles.bigText} whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }} >{letter}</motion.h1>
+              ))
+            }
+        </motion.div>
+        <motion.div
+          variants={lineTwoVariants}
         >
-          Hi, I'm a
-        </motion.h1>
-        <motion.h1 
-          initial={{ x: '10vw', y: '30vw', fontSize: '6vw', opacity: 0 }}
-          animate={{ y: '-7vw', opacity: 1, fontSize: '6vw', color: '#aa98b6' }} 
-          transition={{ duration: 3.5, delay: 0.6, type: 'spring', stiffness: 80 }}
-        >
-          web developer
-        </motion.h1>
+          {
+            lineTwo.map((letter, index) => (
+              <motion.h1 key={index} className={utilStyles.bigText} whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }} >{letter}</motion.h1>
+              ))
+            }
+        </motion.div>
+        <div className={utilStyles.space} />
+        <motion.img
+          src='images/profile-torii.jpg'
+          className={utilStyles.profile}
+          variants={imageVariants}
+          />
       </motion.section>
     </Layout>
   )
+}
+
+const lineOne = 'Hi, I\'m Matt, and'.split('')
+const lineTwo = 'I develop software.'.split('')
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 3.5, staggerChildren: 0.4, delayChildren: 0.5 } }
+}
+
+const lineOneVariants = {
+  hidden: { y: '30vw' },
+  visible: { y: '3.5vw', transition: { duration: 3.5, type: 'spring', stiffness: 80 } }
+}
+
+const lineTwoVariants = {
+  hidden: { y: '30vw' },
+  visible: { y: 0, transition: { duration: 3.5, type: 'spring', stiffness: 80 } }
+}
+
+const imageVariants = {
+  hidden: { y: '30vw' },
+  visible: { y: 0, transition: { duration: 3.5, type: 'spring', stiffness: 80 }}
 }
