@@ -66,7 +66,6 @@
 .timeLine ul li {
     padding: 20px;
     border-color:  #846257;
-    border-radius: 20px;
     border-style: solid;
     border-width: 5px;
     margin-bottom: 40px;
@@ -82,7 +81,7 @@
     .timeLine:before {
         content: '';
         position: absolute;
-        height: 100%;
+        height: 90%;
         width: 7px;
         background-color: #846257;
         left: 50%;
@@ -97,13 +96,11 @@
         float: left;
         clear: right;
         transform: translateX(-50px);
-        border-radius: 20px 0 20px 20px;
     }
     .timeLine ul li:nth-child(even){
         float: right;
         clear: left;
         transform: translateX(30px);
-        border-radius: 0 20px 20px 20px;
     }
     .timeLine ul li:after {
         content: '';
