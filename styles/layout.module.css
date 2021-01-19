@@ -1,36 +1,48 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .navBar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  background-color: black;
+  justify-content: space-around;
+  background-color: rgb(255, 248, 233);
+  width: 100%;
+}
+
+.selected {
+  text-decoration: underline;
 }
 
 .navLinksBox {
   display: flex;
-  width: 30vw;
+  width: auto;
   justify-content: space-around;
-  padding-right: 4vw;
+}
+
+.logoLinkBox {
+  display: flex;
+  width: 25vw;
+  justify-content: center;
 }
 
 .navLinks {
   flex-direction: row;
+  padding: 10px;
 }
 
 .navLinkLetters {
   color: #AA98B6;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 200;
+  font-size: 15px;
   display: inline;
 }
 
 .logo {
   width: 50px;
   height: 50px;
-  margin: 5px 0px 5px 15px;
 }

@@ -1,11 +1,9 @@
-/* eslint-disable jsx-quotes */
-/* eslint-disable react/no-danger */
+/* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedExperiencesData } from '../lib/experience'
-import { Chrono } from 'react-chrono'
 
 export async function getStaticProps() {
   const allExperiencesData = await getSortedExperiencesData()
@@ -17,30 +15,28 @@ export async function getStaticProps() {
 }
 
 export default function Experience({ allExperiencesData }) {
-    const items = allExperiencesData.map(({ startDate, name }) => ({ title: startDate, cardTitle: name }))
     return (
         <Layout>
-            <div className="container">
-                <Head>
-                    <title>Experience</title>
-                </Head>
-                <h1>Experience</h1>
-            </div>
-            <div className={utilStyles.timeLine}>
-                <Chrono
-                    items={items}
-                    mode='VERTICAL_ALTERNATING'
-                    theme={{primary: "white", secondary: "violet", cardBgColor: "#987668", cardForeColor: "violet" }}
-                >
-                    {allExperiencesData.map(({ id, startDate, endDate, role, contentHtml }) => (
-                        <div key={id}>
-                            <h6>{role}</h6>
-                            <h6>{startDate} to {endDate}</h6>
-                            <br />
-                            <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-                        </div>
-                    ))}
-                </Chrono>
+            <Head>
+                <title>Experience</title>
+            </Head>
+            <div className={utilStyles.experienceContainer}>
+                <div className={utilStyles.timeLine}>
+                    <ul>
+                        {
+                            allExperiencesData.map(({ name, image, startDate, endDate, role, contentHtml }) => (
+                                <li>
+                                    <div key={name} className={utilStyles.timeLineContent} >
+                                        <h6 className={utilStyles.timeLineDate}>{startDate} to {endDate}</h6>
+                                        <img className={utilStyles.experienceLogo} src={image}/>
+                                        <h5>{role}</h5>
+                                        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
         </Layout>
     )

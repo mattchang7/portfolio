@@ -1,11 +1,13 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedProjectsData } from '../lib/projects'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+const transition = { duration: 0.6, ease: [ 0.43, 0.13, 0.23, 0.96 ] }
 
 export async function getStaticProps() {
   const allProjectsData = await getSortedProjectsData()
@@ -19,47 +21,31 @@ export async function getStaticProps() {
 export default function Portfolio({ allProjectsData }) {
     return (
         <Layout>
-            <div className="container">
-                <Head>
-                    <title>Portfolio</title>
-                </Head>
-                <h1>Portfolio</h1>
+            <Head>
+                <title>Portfolio</title>
+            </Head>
+            <div className={utilStyles.projectContainer}>
+                {
+                    allProjectsData.map((project, index) => (
+                        <motion.span
+                            key={project.id}
+                            className={utilStyles.thumbnailFrame}
+                            initial={{ y: '40vh', opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1.5, type: 'spring', stiffness: 70, delay: (index / 2)}}
+                        >
+                            <Link href='/'>
+                                <motion.img
+                                    className={utilStyles.thumbnailImage}
+                                    src={project.image}
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={transition}
+                                />
+                            </Link>
+                        </motion.span>
+                    ))
+                }
             </div>
-            <div className={utilStyles.carousel}>
-            {
-                allProjectsData.map(project => (
-                    <Slider key={project.id} fade={true}>
-                        <div>
-                            <img src={project.image} />
-                        </div>
-                        <div className={utilStyles.projectContent}>
-                            <h3>{project.role}</h3>
-                            <h4>{project.date}</h4>
-                            <div dangerouslySetInnerHTML={{ __html: project.contentHtml }} />
-                        </div>
-                    </Slider>
-                ))
-            }
-            </div>
-            {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <ul className={utilStyles.list}>
-                {allProjectsData.map(({ id, date, title, role, image, mobileImage, contentHtml }) => (
-                    <li className={utilStyles.listItem} key={id}>
-                        <img 
-                            srcSet={`${mobileImage} 1000w, ${image} 2000w`}
-                            sizes="(max-width: 1100px) 1000px, 2000px"
-                            src={image}
-                        />
-                        <br />
-                        {date}
-                        <br />
-                        {role}
-                        <br />
-                        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-                    </li>
-                ))}
-                </ul>
-            </section> */}
         </Layout>
     )
 }

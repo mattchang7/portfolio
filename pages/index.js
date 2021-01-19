@@ -19,19 +19,31 @@ export default function Home() {
       >
         <motion.div
           variants={lineOneVariants}
-          >
+        >
           {
             lineOne.map((letter, index) => (
-              <motion.h1 key={index} className={utilStyles.bigText} whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }} >{letter}</motion.h1>
-              ))
-            }
+              <motion.h1 
+                key={index} 
+                className={utilStyles.bigText} 
+                whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }} 
+              >
+                {letter}
+              </motion.h1>   
+            )             
+          )}
         </motion.div>
         <motion.div
           variants={lineTwoVariants}
         >
           {
             lineTwo.map((letter, index) => (
-              <motion.h1 key={index} className={utilStyles.bigText} whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }} >{letter}</motion.h1>
+              <motion.h1
+                key={index}
+                className={utilStyles.bigText}
+                whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }}
+              >
+                {letter}
+              </motion.h1>
               ))
             }
         </motion.div>
@@ -46,7 +58,7 @@ export default function Home() {
   )
 }
 
-const lineOne = 'Hi, I\'m Matt, and'.split('')
+const lineOne = 'Hi, I\'m Matt and'.split('')
 const lineTwo = 'I develop software.'.split('')
 
 const containerVariants = {
@@ -67,4 +79,8 @@ const lineTwoVariants = {
 const imageVariants = {
   hidden: { y: '30vw' },
   visible: { y: 0, transition: { duration: 3.5, type: 'spring', stiffness: 80 }}
+}
+
+const letterVariants = {
+  visible: { opacity: 0.5, transition: { yoyo: 10 }}
 }
