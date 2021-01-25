@@ -19,21 +19,21 @@
 /* PORTFOLIO */
 .projectContainer {
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     margin-bottom: 50px;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .thumbnailFrame {
     width: 350px;
     height: 350px;
     margin: 40px;
+    display: inline-block;
     overflow: hidden;
 }
 .thumbnailImage {
     width: 350px;
     height: 350px;
-    margin: 40px 0 40px 0;
 }
 
 /* EXPERIENCE */
@@ -57,7 +57,7 @@
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    color: #846257;
+    color: #987668;
     padding: 100px 0 100px 0
 }
 .timeLine ul {
@@ -65,7 +65,7 @@
 }
 .timeLine ul li {
     padding: 20px;
-    border-color:  #846257;
+    border-color:  #aa98b6;
     border-style: solid;
     border-width: 5px;
     margin-bottom: 40px;
@@ -83,7 +83,7 @@
         position: absolute;
         height: 90%;
         width: 7px;
-        background-color: #846257;
+        background-color: #aa98b6;
         left: 50%;
         transform: translateX(50%)
     }
@@ -107,7 +107,7 @@
         position: absolute;
         height: 20px;
         width: 20px;
-        background-color: #846257;
+        background-color: #aa98b6;
         top: 0;
     }
     .timeLine ul li:nth-child(odd):after {
@@ -117,9 +117,6 @@
     .timeLine ul li:nth-child(even):after {
         transform: translateX(-50%, -50%);
         left: -58px;
-    }
-    .timeLine ul li:hover:after {
-        background-color: #aa98b6;
     }
     .timeLineDate {
         position: absolute;
