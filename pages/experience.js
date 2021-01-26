@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import Head from 'next/head'
@@ -31,11 +32,7 @@ export default function Experience({ allExperiencesData }) {
                     <ul>
                         {
                             allExperiencesData.map(({ name, image, startDate, endDate, role, contentHtml }, index) => (
-                                <motion.li
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 1, delay: (index / 2) + 0.5 }}
-                                >
+                                <motion.li>
                                     <div key={name} className={utilStyles.timeLineContent}>
                                         <h6 className={utilStyles.timeLineDate}>{startDate} to {endDate}</h6>
                                         <img className={utilStyles.experienceLogo} src={image}/>
