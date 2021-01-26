@@ -1,19 +1,31 @@
 .profile {
-    width: 30vw;
-    height: 30vw;
+    width: 25vw;
+    height: 25vw;
     border-radius: 30vw;
+    margin-left: 10vw;
 }
 .space {
     height: 35vh;
     display: block;
 }
+.textContainer {
+    width: 40vw
+}
 .bigText {
     display: inline;
-    font-size: 6vw;
+    font-size: 4vw;
+    color: #aa98b6;
+}
+.littleText {
     color: #aa98b6;
 }
 .homePage {
-    padding: 25vh 10vw 0 10vw;
+    padding: 15vh 10vw 0 10vw;
+}
+.introRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 /* PORTFOLIO */
@@ -38,6 +50,8 @@
 
 /* PROJECTS */
 .projectContainer {
+    margin-top: 100px;
+    width: 90%;
     color: #aa98b6;
     align-items: center;
     justify-content: center;
@@ -52,13 +66,17 @@
 }
 .projectHeaderImageFrame {
     height: 200px;
+    display: inline-block;
     overflow: hidden;
 }
 .projectHeaderImage {
-    height: 200px;
+    height: 14vw;
     width: 100%;
     object-fit: cover;
-    object-position: 0 49%;
+    object-position: 0 48%;
+}
+.projectDescription {
+    padding: 5vw 20vw;
 }
 
 /* EXPERIENCE */
@@ -148,4 +166,17 @@
         top: -60px;
         color: #987668;
     }
+}
+
+/* CONTACT */
+.contactContainer {
+    color: #aa98b6;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactContainer h4 a {
+    text-decoration: none;
+    color: #aa98b6;
 }

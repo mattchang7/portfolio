@@ -1,6 +1,8 @@
-import { useRouter } from 'next/router'
+/* eslint-disable react/react-in-jsx-scope */
 import { getProjectData, getAllProjectTitles } from '../../lib/projects'
 import utilStyles from '../../styles/utils.module.css'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export async function getStaticProps({ params }) {
     const projectData = await getProjectData(params.project)
@@ -22,14 +24,37 @@ export async function getStaticPaths() {
 const Project = ({ projectData: props }) => {
   return (
       <div className={utilStyles.projectContainer}>
-          <span className={utilStyles.projectHeaderImage}>
-            <img src={`../${props.image}`} className={utilStyles.projectHeaderImage} />
-          </span>
-          <div className={utilStyles.projectInfo}>
+          <motion.span 
+            className={utilStyles.projectHeaderImage}
+            initial={{ opacity: 1, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Link href='/portfolio'>
+                <motion.img 
+                    src={`../${props.image}`} 
+                    className={utilStyles.projectHeaderImage} 
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ duration: 0.6, ease: [ 0.43, 0.13, 0.23, 0.96 ] }}
+                />
+            </Link>
+          </motion.span>
+          <motion.div 
+            className={utilStyles.projectInfo} 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ duration: 0.6, delay: 1}}
+          >
             <h5>{props.role}</h5>
             <h5>{props.date}</h5>
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: props.contentHtml }} />
+          </motion.div>
+          <motion.div 
+            dangerouslySetInnerHTML={{ __html: props.contentHtml }} 
+            className={utilStyles.projectDescription} 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ duration: 0.6, delay: 0.6}}
+          />
       </div>
   )
 }

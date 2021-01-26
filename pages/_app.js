@@ -4,6 +4,10 @@ import '../styles/global.css'
 import styles from '../styles/layout.module.css'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 const navLinks = ['portfolio', 'experience', 'contact']
 
@@ -38,18 +42,6 @@ export default function App({ Component, pageProps, router }) {
                                     whileHover='hover'
                                 >
                                 <a className={styles.navLinkLetters}>{navLink}</a>
-                                {/* {
-                                    navLink.split('').map((letter, letterIdx) => (
-                                        <motion.a 
-                                            className={styles.navLinkLetters}
-                                            key={letterIdx}
-                                            variants={lettersVariants}
-                                            whileHover='hover'
-                                        >
-                                            {letter}
-                                        </motion.a>
-                                    ))
-                                } */}
                                 </motion.div>
                             </Link>
                         ))

@@ -32,7 +32,7 @@ export default function Portfolio({ allProjectsData }) {
                             className={utilStyles.thumbnailFrame}
                             initial={{ y: '40vh', opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1.5, type: 'spring', stiffness: 70, delay: (index / 2)}}
+                            transition={{ duration: 1.5, type: 'spring', stiffness: 70, delay: (index / 3)}}
                         >
                             <Link href={`/portfolio/${project.title}`}>
                                 <motion.img
