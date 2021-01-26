@@ -5,8 +5,4 @@ role: 'Developer'
 image: 'images/FSYC-title.jpg'
 mobileImage: 'images/FSYC-title-mobile.jpg'
 ---
-
-A mock shopping website with secure sign in and checkout, and a working relational schema to store data.
-- Developed with the NEST Stack, React/Redux, Bootstrap, Heroku, Travis, Mocha, and Chai
-- Defined database models and associations
-- Designed and implemented the full stack for the cart component
+A mock Amazon clone with relational database schemas, guest and user capabilities, and secure checkout. Responsible for developing the cart component, both for users and guests, secure sign up and login with OAuth, and defining the database models and API routes. 

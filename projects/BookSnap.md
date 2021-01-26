@@ -5,6 +5,4 @@ role: Developer
 image: 'images/BookSnap-title.jpg'
 mobileImage: 'images/BookSnap-title-mobile.jpg'
 ---
-
-A mobile app to consolidate your digital and physical libraries with machine learning photo scanning
-- Developed with React-Native, Realm, Node, Python, and Google Books API
+A mobile app that consolidates your digital and physical book libraries. Responsible for developing the photo processing function before the machine learning bookshelf scanner, UI/UX of the app, a search function that browses Google Books API, and the library component that showcases the user's library. 

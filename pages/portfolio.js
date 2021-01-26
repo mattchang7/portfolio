@@ -24,7 +24,7 @@ export default function Portfolio({ allProjectsData }) {
             <Head>
                 <title>Portfolio</title>
             </Head>
-            <div className={utilStyles.projectContainer}>
+            <div className={utilStyles.projectLinkContainer}>
                 {
                     allProjectsData.map((project, index) => (
                         <motion.span
@@ -34,7 +34,7 @@ export default function Portfolio({ allProjectsData }) {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1.5, type: 'spring', stiffness: 70, delay: (index / 2)}}
                         >
-                            <Link href='/'>
+                            <Link href={`/portfolio/${project.title}`}>
                                 <motion.img
                                     className={utilStyles.thumbnailImage}
                                     src={project.image}
