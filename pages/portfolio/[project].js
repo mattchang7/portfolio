@@ -30,9 +30,9 @@ const Project = ({ projectData: props }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
           >
-            <Link href='/portfolio'>
+            <Link href={props.link}>
                 <motion.img 
-                    src={`../${props.image}`} 
+                    src={`../${props.image}`}
                     className={utilStyles.projectHeaderImage} 
                     whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.6, ease: [ 0.43, 0.13, 0.23, 0.96 ] }}
