@@ -63,11 +63,11 @@ export default function Home() {
                 for most of my life. To me, good design always makes the world a better place, but with how fast new stacks and
                 frameworks are developed on the internet, there is also an emerging problem in a lack of priority towards simple
                 and sustainable architecture. I believe that the largest space for effective and exciting design is in the world
-                of the internet, and that I’m well suited to implement some solutions.
+                of the internet, and I'm excited to learn and implement great solutions.
               </p>
               <p>
-                In the future I plan to continue to always keep learning new skills, and to take any opportunity I can get
-                to build meaningful technology.
+                In the future I plan to continue to always continue learning new skills, and to take any opportunity I can get
+                to develop meaningful technology.
               </p>
             </motion.div>
           </div>
