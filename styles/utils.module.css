@@ -185,4 +185,7 @@
     margin: 5px;
     font-weight: 500;
 }
-
+.contactContainer h4 i {
+    width: 10px;
+    height: 10px;
+}
