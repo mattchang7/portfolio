@@ -19,22 +19,22 @@ export default function Contact() {
                         initial={{ y: '30vh', opacity: 0 }} 
                         animate={{ y: 0, opacity: 1 }} 
                         transition={{ duration: 0.6, type: 'spring', stiffness: 50, delay: 0.3}}
-                    ><i className="fas fa-thumbtack fa-sm" width={0} />    New York, NY</motion.h4>
+                    ><i className="fas fa-thumbtack fa-sm" width={12} />    New York, NY</motion.h4>
                     <motion.h4 
                         initial={{ y: '30vh', opacity: 0 }} 
                         animate={{ y: 0, opacity: 1 }} 
                         transition={{ duration: 0.6, type: 'spring', stiffness: 50, delay: 0.5}}
-                    ><i className="fas fa-envelope fa-sm" width={0} />    matthewhansol@gmail.com</motion.h4>
+                    ><i className="fas fa-envelope fa-sm" width={12} />    matthewhansol@gmail.com</motion.h4>
                     <motion.h4 
                         initial={{ y: '30vh', opacity: 0 }} 
                         animate={{ y: 0, opacity: 1 }} 
                         transition={{ duration: 0.6, type: 'spring', stiffness: 50, delay: 0.7}}
-                    ><i className="fab fa-linkedin fa-sm" width={0} /><a href='https://www.linkedin.com/in/mattchang7'>    https://www.linkedin.com/in/mattchang7</a></motion.h4>
+                    ><i className="fab fa-linkedin fa-sm" width={12} /><a href='https://www.linkedin.com/in/mattchang7'>    https://www.linkedin.com/in/mattchang7</a></motion.h4>
                     <motion.h4
                         initial={{ y: '30vh', opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, type: 'spring', stiffness: 50, delay: 0.9}}
-                    ><i className="fab fa-github fa-sm" width={0} /><a href='https://github.com/mattchang7'>    https://github.com/mattchang7</a></motion.h4>
+                    ><i className="fab fa-github fa-sm" width={12} /><a href='https://github.com/mattchang7'>    https://github.com/mattchang7</a></motion.h4>
                 </div>
             </div>
         </Layout>
