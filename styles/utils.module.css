@@ -186,5 +186,6 @@
     font-weight: 500;
 }
 .contactContainer h4 i {
-    font-size: 5vh;
+    width: 10px;
+    height: 10px;
 }
