@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className={utilStyles.space} />
           <motion.img
-            src='images/profile-torii.jpg'
+            src='images/profile-bw.jpg'
             className={utilStyles.profile}
             variants={imageVariants}
             />
