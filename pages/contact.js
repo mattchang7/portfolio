@@ -14,10 +14,10 @@ export default function Contact() {
                     <link rel='icon' href='/public/images/logo-icon.ico'/>
                 </Head>
                 <div className={utilStyles.contactContainer}>
-                    <motion.h4><i className="fas fa-thumbtack"/>    New York, NY</motion.h4>
-                    <motion.h4><i className="fas fa-envelope"/>    matthewhansol@gmail.com</motion.h4>
-                    <motion.h4><i className="fab fa-linkedin"/><a href='https://www.linkedin.com/in/mattchang7'>    https://www.linkedin.com/in/mattchang7</a></motion.h4>
-                    <motion.h4><i className="fab fa-github"/><a href='https://github.com/mattchang7'>    https://github.com/mattchang7</a></motion.h4>
+                    <motion.h4><i className="fas fa-thumbtack fa-sm"/>    New York, NY</motion.h4>
+                    <motion.h4><i className="fas fa-envelope fa-sm"/>    matthewhansol@gmail.com</motion.h4>
+                    <motion.h4><i className="fab fa-linkedin fa-sm"/><a href='https://www.linkedin.com/in/mattchang7'>    https://www.linkedin.com/in/mattchang7</a></motion.h4>
+                    <motion.h4><i className="fab fa-github fa-sm"/><a href='https://github.com/mattchang7'>    https://github.com/mattchang7</a></motion.h4>
                 </div>
             </div>
         </Layout>
