@@ -50,26 +50,11 @@ export default function Home() {
                 }
             </motion.div>
             <motion.div
-              variants={lineThreeVariants}
-            >
-              {
-                lineThree.map((letter, index) => (
-                  <motion.h1
-                    key={index}
-                    className={utilStyles.bigText}
-                    whileHover={{ color: '#f9f7f6', textShadow: '0px 0px 5px #f9f7f6' }}
-                  >
-                    {letter}
-                  </motion.h1>
-                  ))
-                }
-            </motion.div>
-            <motion.div
               className={utilStyles.littleText}
               variants={descriptionVariants}
             >
               <p>
-                Hello, I’m a full stack software engineer. I currently study Computer Science at Fordham,
+                I’m a full stack software engineer. I currently study Computer Science at Fordham,
                 but I decided to take a semester off and take a more focused and intense approach this fall by joining an
                 immersive bootcamp for Web Development at Full Stack Academy in New York.
               </p>
@@ -99,8 +84,7 @@ export default function Home() {
 }
 
 const lineOne = 'I\'m Matt, and I'.split('')
-const lineTwo = 'love to build'.split('')
-const lineThree = 'software.'.split('')
+const lineTwo = 'develop software'.split('')
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -116,17 +100,12 @@ const lineTwoVariants = {
   hidden: { y: '30vw' },
   visible: { y: 0, transition: { duration: 3.5, type: 'spring', stiffness: 80 } }
 }
-const lineThreeVariants = {
-  hidden: { y: '30vw' },
-  visible: { y: '-2.5vw', transition: { duration: 3.5, type: 'spring', stiffness: 80 } }
-}
-
 const imageVariants = {
-  hidden: { y: '30vw' },
+  hidden: { y: '50vw' },
   visible: { y: '7vw', transition: { duration: 3.5, type: 'spring', stiffness: 80 }}
 }
 
 const descriptionVariants = {
   hidden: { y: '30vw'},
-  visible: { y: 0, transition: { duration: 3.5, type: 'spring', stiffness: 80 }}
+  visible: { y: '5vw', transition: { duration: 3.5, type: 'spring', stiffness: 80 }}
 }
