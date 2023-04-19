@@ -1,6 +1,6 @@
 .profile {
-    width: 25vw;
-    height: 25vw;
+    width: 27vw;
+    height: 27vw;
     border-radius: 30vw;
     margin-left: 10vw;
 }
@@ -9,16 +9,18 @@
     display: block;
 }
 .textContainer {
-    width: 40vw
+    width: 45vw
 }
 .bigText {
     display: inline;
-    font-size: 4vw;
-    color: #aa98b6;
+    font-size: 8vw;
+    color: #403549;
 }
 .littleText {
-    color: #aa98b6;
-    margin-bottom: 200px;
+    color: #403549;
+}
+.resumeButton {
+  margin-top: 100px;
 }
 .homePage {
     padding: 15vh 10vw 0 10vw;
@@ -27,6 +29,55 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+}
+
+/* RESUME BUTTON */
+.button59 {
+  align-items: center;
+  background-color: rgb(255, 248, 233);
+  border: 2px solid #403549;
+  box-sizing: border-box;
+  color: #403549;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #403549;
+  font-family: 'JetBrains Mono';
+  font-size: 18px;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button59:focus {
+  color: #171e29;
+}
+
+.button59:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.button59:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button59 {
+    min-width: 170px;
+  }
 }
 
 /* PORTFOLIO */
@@ -53,7 +104,7 @@
 .projectContainer {
     margin-top: 100px;
     width: 90%;
-    color: #aa98b6;
+    color: #403549;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -92,8 +143,7 @@
     justify-content: center;
 }
 .experienceLogo {
-    width: 20vw;
-    height: auto;
+    max-height: 30px;
 }
 .timeLine {
     width: 100%;
@@ -101,7 +151,7 @@
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    color: #aa98b6;
+    color: #403549;
     padding: 100px 0 100px 0
 }
 .timeLine ul {
@@ -109,7 +159,7 @@
 }
 .timeLine ul li {
     padding: 20px;
-    border-color:  #aa98b6;
+    border-color:  #403549;
     border-style: solid;
     border-width: 5px;
     margin-bottom: 40px;
@@ -127,7 +177,7 @@
         position: absolute;
         height: 90%;
         width: 7px;
-        background-color: #aa98b6;
+        background-color: #403549;
         left: 50%;
         transform: translateX(50%)
     }
@@ -151,7 +201,7 @@
         position: absolute;
         height: 20px;
         width: 20px;
-        background-color: #aa98b6;
+        background-color: #403549;
         top: 0;
     }
     .timeLine ul li:nth-child(odd):after {
@@ -165,13 +215,13 @@
     .timeLineDate {
         position: absolute;
         top: -60px;
-        color: #aa98b6;
+        color: #403549;
     }
 }
 
 /* CONTACT */
 .contactContainer {
-    color: #aa98b6;
+    color: #403549;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -179,7 +229,7 @@
 }
 .contactContainer h4 a {
     text-decoration: none;
-    color: #aa98b6;
+    color: #403549;
 }
 .contactContainer h4 {
     margin: 5px;
