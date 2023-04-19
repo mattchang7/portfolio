@@ -9,7 +9,7 @@ const navLinks = ["projects", "experience", "contact"];
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <AnimatePresence initial={false} exitBeforeEnter>
+    <AnimatePresence initial={false} wait>
       <div className={styles.container}>
         <motion.div
           className={styles.navBar}
@@ -18,19 +18,22 @@ export default function App({ Component, pageProps, router }) {
           animate="visible"
         >
           <div className={styles.logoLinkBox}>
-            <Link href="/">
-              <motion.a
-                className={styles.logo}
-                variants={logoVariants}
-                whileHover="hover"
-              >
-                <img src="images/logo-svg.svg" />
-              </motion.a>
+            <Link
+              href="/"
+              className={styles.logo}
+              variants={logoVariants}
+              whilehover="hover"
+            >
+              <img src="images/logo-svg.svg" />
             </Link>
           </div>
           <div className={styles.navLinksBox}>
             {navLinks.map((navLink, index) => (
-              <Link href={`/${navLink}`} key={index}>
+              <Link
+                href={`/${navLink}`}
+                key={index}
+                className={styles.navLinkLetters}
+              >
                 <motion.div
                   className={
                     router.pathname === `/${navLink}`
@@ -38,9 +41,9 @@ export default function App({ Component, pageProps, router }) {
                       : `${styles.navLinks}`
                   }
                   variants={navLinksVariants}
-                  whileHover="hover"
+                  whilehover="hover"
                 >
-                  <a className={styles.navLinkLetters}>{navLink}</a>
+                  <h5 className={styles.navLinkLetters}>{navLink}</h5>
                 </motion.div>
               </Link>
             ))}

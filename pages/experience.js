@@ -17,9 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function Experience({ allExperiencesData }) {
-  allExperiencesData?.sort((a, b) =>
-    new Date(a.startDate) > new Date(b.startDate) ? -1 : 1
-  );
   return (
     <Layout>
       <Head>

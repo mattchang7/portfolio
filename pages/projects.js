@@ -42,7 +42,7 @@ export default function Projects({ allProjectsData }) {
               <motion.img
                 className={utilStyles.thumbnailImage}
                 src={project.image}
-                whileHover={{ scale: 1.05 }}
+                whilehover={{ scale: 1.05 }}
                 transition={transition}
               />
             </Link>

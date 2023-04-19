@@ -25,7 +25,7 @@ export default function Home() {
                 <motion.h1
                   key={index}
                   className={utilStyles.bigText}
-                  whileHover={{
+                  whilehover={{
                     color: "#f9f7f6",
                     textShadow: "0px 0px 5px #f9f7f6",
                   }}
