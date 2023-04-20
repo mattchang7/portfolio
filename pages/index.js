@@ -82,12 +82,12 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 3.5, staggerChildren: 0.4, delayChildren: 0.5 },
+    transition: { duration: 2.5, staggerChildren: 0.4, delayChildren: 0.5 },
   },
 };
 
 const lineOneVariants = {
-  hidden: { y: "60vh" },
+  hidden: { y: "80vh" },
   visible: {
     y: "2vw",
     transition: { duration: 3.5, type: "spring", stiffness: 80 },
