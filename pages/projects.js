@@ -31,6 +31,7 @@ export default function Projects({ allProjectsData }) {
             className={utilStyles.thumbnailFrame}
             initial={{ y: "40vh", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-40vh", opacity: 0 }}
             transition={{
               duration: 1.5,
               type: "spring",

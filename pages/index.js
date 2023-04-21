@@ -12,31 +12,32 @@ export default function Home() {
         <title>Home</title>
         <link rel="icon" href="/images/logo-icon.ico" />
       </Head>
-      <motion.section
-        className={utilStyles.homePage}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <section className={utilStyles.homePage}>
         <div className={utilStyles.introRow}>
           <div className={utilStyles.textContainer}>
-            <motion.div variants={lineOneVariants}>
+            <motion.div
+              key="welcome-text"
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: "0vh", opacity: 1 }}
+              exit={{ y: "-30vh", opacity: 0 }}
+              transition={{ type: "spring", duration: 1 }}
+            >
               {lineOne.map((letter, index) => (
-                <motion.h1
-                  key={index}
-                  className={utilStyles.bigText}
-                  whilehover={{
-                    color: "#f9f7f6",
-                    textShadow: "0px 0px 5px #f9f7f6",
-                  }}
-                >
+                <motion.h1 key={index} className={utilStyles.bigText}>
                   {letter}
                 </motion.h1>
               ))}
             </motion.div>
             <motion.div
               className={utilStyles.littleText}
-              variants={descriptionVariants}
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: "0vh", opacity: 1 }}
+              exit={{ y: "-30vh", opacity: 0 }}
+              transition={{
+                type: "spring",
+                duration: 1,
+                delay: 0.25,
+              }}
             >
               <p>
                 My name is Matthew Chang. I'm a full stack software engineer
@@ -47,7 +48,14 @@ export default function Home() {
             </motion.div>
             <motion.div
               className={utilStyles.resumeButton}
-              variants={resumeVariants}
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: "0vh", opacity: 1 }}
+              exit={{ y: "-30vh", opacity: 0 }}
+              transition={{
+                type: "spring",
+                duration: 1,
+                delay: 0.5,
+              }}
             >
               <button
                 className={utilStyles.button59}
@@ -64,60 +72,23 @@ export default function Home() {
               </button>
             </motion.div>
           </div>
-          <div className={utilStyles.space} />
-          <motion.img
-            src="images/profile.jpg"
-            className={utilStyles.profile}
-            variants={imageVariants}
-          />
+          <motion.div
+            className={utilStyles.space}
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: "5vh", opacity: 1 }}
+            exit={{ y: "-30vh", opacity: 0 }}
+            transition={{
+              type: "spring",
+              duration: 1,
+              delay: 0.75,
+            }}
+          >
+            <img src="images/profile.jpg" className={utilStyles.profile} />
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
     </Layout>
   );
 }
 
 const lineOne = "Welcome.".split("");
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 2.5, staggerChildren: 0.4, delayChildren: 0.5 },
-  },
-};
-
-const lineOneVariants = {
-  hidden: { y: "80vh" },
-  visible: {
-    y: "2vw",
-    transition: { duration: 3.5, type: "spring", stiffness: 80 },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, scale: 0.5 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: "8vh",
-    transition: {
-      duration: 1,
-      ease: [0, 0.71, 0.2, 1.25],
-    },
-  },
-};
-
-const descriptionVariants = {
-  hidden: { y: "60vh" },
-  visible: {
-    y: "5vw",
-    transition: { duration: 3.5, type: "spring", stiffness: 80 },
-  },
-};
-const resumeVariants = {
-  hidden: { y: "60vh" },
-  visible: {
-    y: "5vw",
-    transition: { duration: 3.5, type: "spring", stiffness: 80 },
-  },
-};

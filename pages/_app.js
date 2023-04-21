@@ -9,49 +9,48 @@ const navLinks = ["projects", "experience", "contact"];
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <AnimatePresence initial={false} wait>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <motion.div
+        className={styles.navBar}
+        variants={navBarVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <motion.div
-          className={styles.navBar}
-          variants={navBarVariants}
-          initial="hidden"
-          animate="visible"
+          className={styles.logoLinkBox}
+          variants={logoVariants}
+          whileHover="hover"
         >
-          <div className={styles.logoLinkBox}>
-            <Link
-              href="/"
-              className={styles.logo}
-              variants={logoVariants}
-              whilehover="hover"
-            >
-              <img src="images/logo-svg.svg" />
-            </Link>
-          </div>
-          <div className={styles.navLinksBox}>
-            {navLinks.map((navLink, index) => (
-              <Link
-                href={`/${navLink}`}
-                key={index}
-                className={styles.navLinkLetters}
-              >
-                <motion.div
-                  className={
-                    router.pathname === `/${navLink}`
-                      ? `${styles.navLinks} ${styles.selected}`
-                      : `${styles.navLinks}`
-                  }
-                  variants={navLinksVariants}
-                  whilehover="hover"
-                >
-                  <h5 className={styles.navLinkLetters}>{navLink}</h5>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
+          <Link href="/" className={styles.logo}>
+            <img src="images/logo-svg.svg" />
+          </Link>
         </motion.div>
-        <Component {...pageProps} />
-      </div>
-    </AnimatePresence>
+        <div className={styles.navLinksBox}>
+          {navLinks.map((navLink, index) => (
+            <Link
+              href={`/${navLink}`}
+              key={index}
+              className={styles.navLinkLetters}
+            >
+              <motion.div
+                className={
+                  router.pathname === `/${navLink}`
+                    ? `${styles.navLinks} ${styles.selected}`
+                    : `${styles.navLinks}`
+                }
+                whileHover={{ scale: [null, 1.3, 1.1] }}
+                transition={{ duration: 0.3 }}
+              >
+                <h5 className={styles.navLinkLetters}>{navLink}</h5>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+      <AnimatePresence initial={false} mode="wait">
+        <Component key={router.asPath} {...pageProps} />
+      </AnimatePresence>
+    </div>
   );
 }
 

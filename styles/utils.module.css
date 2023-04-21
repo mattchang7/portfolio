@@ -1,34 +1,48 @@
+.testDiv {
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+}
 .profile {
-    width: 27vw;
-    height: 27vw;
-    border-radius: 30vw;
-    margin-left: 10vw;
+  width: 27vw;
+  height: 27vw;
+  border-radius: 30vw;
+  margin-left: 10vw;
+  transition: all 0.2s ease-in-out;
+}
+.profile:hover {
+  transform: scale(1.2);
 }
 .space {
-    height: 35vh;
-    display: block;
+  height: 35vh;
+  width: 27vw;
+  display: block;
 }
 .textContainer {
-    width: 45vw
+  width: 45vw;
 }
 .bigText {
-    display: inline;
-    font-size: 8vw;
-    color: #403549;
+  display: inline;
+  font-size: 8vw;
+  color: #403549;
+}
+.bigText:hover {
+  color: #f9f7f6;
+  text-shadow: 0px 0px 5px #f9f7f6;
 }
 .littleText {
-    color: #403549;
+  color: #403549;
 }
 .resumeButton {
   margin-top: 100px;
 }
 .homePage {
-    padding: 15vh 10vw 0 10vw;
+  padding: 15vh 10vw 0 10vw;
 }
 .introRow {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 /* RESUME BUTTON */
@@ -41,37 +55,26 @@
   cursor: pointer;
   display: inline-flex;
   fill: #403549;
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-size: 18px;
   height: 48px;
   justify-content: center;
-  letter-spacing: -.8px;
+  letter-spacing: -0.8px;
   line-height: 24px;
   min-width: 140px;
   outline: 0;
   padding: 0 17px;
   text-align: center;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-
-.button59:focus {
-  color: #171e29;
+  transition: all 0.2s ease-in-out;
 }
 
 .button59:hover {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
-}
-
-.button59:active {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
@@ -82,160 +85,106 @@
 
 /* PORTFOLIO */
 .projectLinkContainer {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 50px;
-    margin-top: 100px;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 100px;
 }
 .thumbnailFrame {
-    width: 350px;
-    height: 350px;
-    margin: 40px;
-    display: inline-block;
-    overflow: hidden;
+  width: 350px;
+  height: 350px;
+  margin: 40px;
+  display: inline-block;
+  overflow: hidden;
 }
 .thumbnailImage {
-    width: 350px;
-    height: 350px;
+  width: 350px;
+  height: 350px;
 }
 
 /* PROJECTS */
 .projectContainer {
-    margin-top: 100px;
-    width: 90%;
-    color: #403549;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+  margin-top: 100px;
+  width: 90%;
+  color: #403549;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .projectInfo {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
 }
 .projectHeaderImageFrame {
-    height: 200px;
-    display: inline-block;
-    overflow: hidden;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
 }
 .projectHeaderImage {
-    height: 14vw;
-    width: 100%;
-    object-fit: cover;
-    object-position: 0 48%;
+  height: 14vw;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 48%;
 }
 .projectDescription {
-    padding: 5vw 20vw;
+  padding: 5vw 20vw;
 }
 
 /* EXPERIENCE */
 .experienceContainer {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .experienceLogo {
-    max-height: 30px;
+  max-height: 30px;
 }
-.timeLine {
-    width: 100%;
-    height: auto;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    color: #403549;
-    padding: 100px 0 100px 0
+.timelineList {
+  width: clamp(50%, 500px, 90%);
+  height: auto;
+  margin: 0 auto;
+  color: #403549;
+  list-style: none;
 }
-.timeLine ul {
-    list-style: none;
+.timelineItem {
+  padding: 10px;
+  margin-bottom: 20px;
 }
-.timeLine ul li {
-    padding: 20px;
-    border-color:  #403549;
-    border-style: solid;
-    border-width: 5px;
-    margin-bottom: 40px;
-    width: 90%;
+.timelineContent {
+  color: #403549;
+  font-size: 12px;
 }
-.timeLine ul li:last-child {
-    margin-bottom: 0;
+.timelineDate {
+  font-size: 12px;
 }
-.timeLineContent div {
-    font-size: 12px;
-}
-@media only screen and (min-width: 768px){
-    .timeLine:before {
-        content: '';
-        position: absolute;
-        height: 90%;
-        width: 7px;
-        background-color: #403549;
-        left: 50%;
-        transform: translateX(50%)
-    }
-    .timeLine ul li {
-        width: 50%;
-        margin-bottom: 50px;
-        position: relative;
-    }
-    .timeLine ul li:nth-child(odd){
-        float: left;
-        clear: right;
-        transform: translateX(-50px);
-    }
-    .timeLine ul li:nth-child(even){
-        float: right;
-        clear: left;
-        transform: translateX(30px);
-    }
-    .timeLine ul li:after {
-        content: '';
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        background-color: #403549;
-        top: 0;
-    }
-    .timeLine ul li:nth-child(odd):after {
-        transform: translateX(50%, -50%);
-        right: -52px;
-    }
-    .timeLine ul li:nth-child(even):after {
-        transform: translateX(-50%, -50%);
-        left: -58px;
-    }
-    .timeLineDate {
-        position: absolute;
-        top: -60px;
-        color: #403549;
-    }
+.timelineRole {
+  font-size: 14px;
 }
 
 /* CONTACT */
 .contactContainer {
-    color: #403549;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  color: #403549;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contactContainer h4 a {
-    text-decoration: none;
-    color: #403549;
+  text-decoration: none;
+  color: #403549;
 }
 .contactContainer h4 {
-    margin: 5px;
-    font-weight: 500;
+  margin: 5px;
+  font-weight: 500;
 }
 .contactContainer h4 i {
-    width: 3em;
-    height: 3em;
+  width: 3em;
+  height: 3em;
 }

@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedExperiencesData } from "../lib/experience";
 import { motion } from "framer-motion";
+import TimelineItem from "../components/timelineItem";
 
 export async function getStaticProps() {
   const allExperiencesData = await getSortedExperiencesData();
@@ -23,29 +24,33 @@ export default function Experience({ allExperiencesData }) {
         <title>Experience</title>
       </Head>
       <div className={utilStyles.experienceContainer}>
-        <motion.div
-          className={utilStyles.timeLine}
-          initial={{ y: "100vh", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.5, type: "spring", stiffness: 50 }}
-        >
-          <ul>
-            {allExperiencesData.map(
-              ({ name, image, startDate, endDate, role, contentHtml }) => (
-                <motion.li>
-                  <div key={name} className={utilStyles.timeLineContent}>
-                    <h6 className={utilStyles.timeLineDate}>
-                      {startDate} to {endDate}
-                    </h6>
-                    <img className={utilStyles.experienceLogo} src={image} />
-                    <h5>{role}</h5>
-                    <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-                  </div>
-                </motion.li>
-              )
-            )}
-          </ul>
-        </motion.div>
+        <motion.ul className={utilStyles.timelineList}>
+          {allExperiencesData.map(
+            ({ name, image, startDate, endDate, role, contentHtml }, index) => (
+              <motion.li
+                className={utilStyles.timelineItem}
+                initial={{ y: "40vh", opacity: 0 }}
+                animate={{ y: 100, opacity: 1 }}
+                exit={{ y: "-40vh", opacity: 0 }}
+                transition={{
+                  duration: 1.5,
+                  type: "spring",
+                  stiffness: 70,
+                  delay: index / 3,
+                }}
+              >
+                <div key={name} className={utilStyles.timelineContent}>
+                  <h6 className={utilStyles.timelineDate}>
+                    {startDate} to {endDate}
+                  </h6>
+                  <img className={utilStyles.experienceLogo} src={image} />
+                  <h5 className={utilStyles.timelineRole}>{role}</h5>
+                  <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                </div>
+              </motion.li>
+            )
+          )}
+        </motion.ul>
       </div>
     </Layout>
   );
