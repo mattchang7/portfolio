@@ -19,5 +19,10 @@
     "react-slick": "^0.29.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "@types/react": "^18.2.6",
+    "typescript": "^5.0.4"
   }
 }
